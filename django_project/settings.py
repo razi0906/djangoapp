@@ -123,13 +123,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+
 
 
 
 RECAPTCHA_PUBLIC_KEY = "6LewoD4oAAAAAPEMinLi9K8qB4g6YpvWo9-zHLVo"
 
-RECAPTCHA_PRIVATE_KEY = "6LewoD4oAAAAACb6PuwGjgvmz7trZfn_r2YqsFuO"
+RECAPTCHA_PRIVATE_KEY = os.environ.get('captcha')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -149,4 +150,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'RA.AHMED0906@GMAIL.COM'
-EMAIL_HOST_PASSWORD = 'kywiwbmebxryxpgq'
+EMAIL_HOST_PASSWORD = os.environ.get('email_host_password')
